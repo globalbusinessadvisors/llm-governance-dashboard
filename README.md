@@ -46,6 +46,101 @@
 
 ---
 
+## 📦 Published Packages
+
+### NPM Packages
+
+We provide a complete SDK and CLI for integrating with the LLM Governance Dashboard:
+
+#### [@llm-dev-ops/llm-governance-types](https://www.npmjs.com/package/@llm-dev-ops/llm-governance-types) ![npm](https://img.shields.io/npm/v/@llm-dev-ops/llm-governance-types)
+
+TypeScript type definitions for the entire API surface.
+
+```bash
+npm install @llm-dev-ops/llm-governance-types
+```
+
+```typescript
+import type { User, Organization, LLMProvider } from '@llm-dev-ops/llm-governance-types';
+```
+
+#### [@llm-dev-ops/llm-governance-sdk](https://www.npmjs.com/package/@llm-dev-ops/llm-governance-sdk) ![npm](https://img.shields.io/npm/v/@llm-dev-ops/llm-governance-sdk)
+
+Full-featured TypeScript/JavaScript SDK for interacting with the API.
+
+```bash
+npm install @llm-dev-ops/llm-governance-sdk
+```
+
+```typescript
+import { LLMGovernanceSDK } from '@llm-dev-ops/llm-governance-sdk';
+
+const sdk = new LLMGovernanceSDK({
+  baseUrl: 'https://api.example.com/v1',
+  token: 'your-access-token'
+});
+
+// Use the SDK
+const user = await sdk.auth.getCurrentUser();
+const orgs = await sdk.organizations.listOrganizations();
+```
+
+**Features:**
+- ✅ Browser-agnostic (uses standard Fetch API)
+- ✅ Authentication API (login, register, MFA, password reset)
+- ✅ Organizations API (CRUD, members, teams)
+- ✅ LLM Providers & Models API
+- ✅ Comprehensive TypeScript types
+- ✅ Full documentation with examples
+
+#### [@llm-dev-ops/llm-governance-cli](https://www.npmjs.com/package/@llm-dev-ops/llm-governance-cli) ![npm](https://img.shields.io/npm/v/@llm-dev-ops/llm-governance-cli)
+
+Command-line interface for managing your LLM Governance Dashboard from the terminal.
+
+```bash
+npm install -g @llm-dev-ops/llm-governance-cli
+```
+
+```bash
+# Login
+llm-gov auth login
+
+# List organizations
+llm-gov org list
+
+# Create a provider
+llm-gov provider create <org-id>
+
+# View all commands
+llm-gov --help
+```
+
+**Commands:**
+- `auth` - Authentication (login, logout, whoami)
+- `org` - Organization management (CRUD, members)
+- `team` - Team management (CRUD, members)
+- `provider` - LLM provider management (OpenAI, Anthropic, Azure, Bedrock, custom)
+- `model` - LLM model management
+- `config` - CLI configuration management
+
+**Features:**
+- ✅ Interactive prompts for complex operations
+- ✅ JSON output mode for scripting (`--json`)
+- ✅ Colored and formatted table output
+- ✅ Secure credential storage
+- ✅ CI/CD ready
+
+### Rust Crates (Coming Soon)
+
+Rust libraries for building custom integrations and services:
+
+- **llm-governance-common** - Shared types and utilities
+- **llm-governance-auth** - Authentication library
+- **llm-governance-db** - Database utilities
+- **llm-governance-api-client** - Rust API client
+
+---
+
 ## 🎯 Quick Start
 
 ### Docker Compose (Fastest - 2 minutes)
@@ -212,11 +307,13 @@ make setup && make dev
 |----------|-------------|
 | **Backend** | Rust, Actix-web, Tokio, sqlx, Redis |
 | **Frontend** | SvelteKit, Svelte 5, TypeScript, Tailwind CSS |
+| **SDK/CLI** | TypeScript, Commander.js, Inquirer.js, Chalk |
 | **Database** | PostgreSQL, TimescaleDB, Redis |
 | **Auth** | JWT, OAuth2, TOTP (MFA) |
 | **Deployment** | Docker, Kubernetes, Helm, Terraform |
 | **Monitoring** | Prometheus, Grafana, OpenTelemetry |
 | **CI/CD** | GitHub Actions |
+| **Packages** | npm (SDK, CLI), crates.io (coming soon) |
 
 ---
 
@@ -226,10 +323,16 @@ make setup && make dev
 - **1,433+** lines of new multi-tenant & cost tracking code
 - **8** Rust microservices (Actix-web)
 - **1** SvelteKit frontend
+- **3** npm packages (SDK, Types, CLI)
 - **60+** REST API endpoints
 - **14** database tables for multi-tenancy
 - **1** TimescaleDB hypertable for time-series data
 - **1** materialized view for cost analytics
+
+### Published Packages
+- **@llm-dev-ops/llm-governance-types** v1.0.0 - TypeScript type definitions
+- **@llm-dev-ops/llm-governance-sdk** v1.0.1 - JavaScript/TypeScript SDK
+- **@llm-dev-ops/llm-governance-cli** v1.0.0 - Command-line interface
 
 ### Features Implemented
 
@@ -286,6 +389,23 @@ make setup && make dev
   - Complete TypeScript types
 - **Removed Stripe Billing**: Replaced with internal cost tracking
 
+#### ✅ SDK & CLI (100% Complete)
+- **TypeScript SDK** (`packages/sdk/`)
+  - Browser-agnostic API client
+  - Full authentication support (login, MFA, OAuth)
+  - Organizations, teams, members management
+  - LLM providers & models API
+  - Published to npm as @llm-dev-ops/llm-governance-sdk
+- **TypeScript Types** (`packages/types/`)
+  - Complete type definitions for all API entities
+  - Published to npm as @llm-dev-ops/llm-governance-types
+- **Command-Line Interface** (`packages/cli/`)
+  - Interactive CLI with colored output and tables
+  - All CRUD operations for orgs, teams, providers, models
+  - JSON output mode for scripting
+  - Secure credential storage
+  - Published to npm as @llm-dev-ops/llm-governance-cli
+
 #### ✅ Database (100% Complete)
 - **Migration** (`database/migrations/0011_organizations_and_cost_tracking.sql` - 301 lines)
   - 14 tables for multi-tenancy & cost tracking
@@ -311,6 +431,7 @@ make setup && make dev
 ✅ Model pricing configuration
 ✅ Organization/team/user level permissions
 ✅ RESTful APIs for all operations
+✅ TypeScript SDK and CLI (published to npm)
 ✅ Docker Compose deployment
 ✅ Comprehensive documentation
 
