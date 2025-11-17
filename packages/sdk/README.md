@@ -240,7 +240,7 @@ constructor(config?: ApiClientConfig)
 
 ## TypeScript Support
 
-This package includes TypeScript type definitions. Import types from `@llm-dev-ops/types`:
+This package includes TypeScript type definitions. Import types from `@llm-dev-ops/llm-governance-types`:
 
 ```typescript
 import type {
@@ -249,7 +249,7 @@ import type {
   Team,
   LLMProvider,
   LLMModel
-} from '@llm-dev-ops/types';
+} from '@llm-dev-ops/llm-governance-types';
 ```
 
 ## License

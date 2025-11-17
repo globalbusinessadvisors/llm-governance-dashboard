@@ -68,8 +68,8 @@ publish_package() {
 echo "Publishing packages..."
 echo ""
 
-# 1. Publish @llm-dev-ops/types
-publish_package "packages/types" "@llm-dev-ops/types"
+# 1. Publish @llm-dev-ops/llm-governance-types
+publish_package "packages/types" "@llm-dev-ops/llm-governance-types"
 
 # 2. Publish @llm-dev-ops/llm-governance-sdk
 publish_package "packages/sdk" "@llm-dev-ops/llm-governance-sdk"
@@ -77,9 +77,9 @@ publish_package "packages/sdk" "@llm-dev-ops/llm-governance-sdk"
 echo -e "${GREEN}All packages published successfully!${NC}"
 echo ""
 echo "Packages published:"
-echo "  - @llm-dev-ops/types"
+echo "  - @llm-dev-ops/llm-governance-types"
 echo "  - @llm-dev-ops/llm-governance-sdk"
 echo ""
 echo "View on npmjs.org:"
-echo "  - https://www.npmjs.com/package/@llm-dev-ops/types"
+echo "  - https://www.npmjs.com/package/@llm-dev-ops/llm-governance-types"
 echo "  - https://www.npmjs.com/package/@llm-dev-ops/llm-governance-sdk"

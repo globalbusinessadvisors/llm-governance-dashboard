@@ -6,7 +6,7 @@ import type {
   User,
   MFASetupResponse,
   MFAVerifyRequest,
-} from '@llm-dev-ops/types';
+} from '@llm-dev-ops/llm-governance-types';
 
 export class AuthApi {
   constructor(private client: ApiClient) {}

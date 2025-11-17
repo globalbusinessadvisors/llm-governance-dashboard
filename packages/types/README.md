@@ -1,11 +1,11 @@
-# @llm-dev-ops/types
+# @llm-dev-ops/llm-governance-types
 
 TypeScript type definitions for the LLM Governance Dashboard API.
 
 ## Installation
 
 ```bash
-npm install @llm-dev-ops/types
+npm install @llm-dev-ops/llm-governance-types
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ import type {
   Policy,
   LLMUsage,
   AuditLog
-} from '@llm-dev-ops/types';
+} from '@llm-dev-ops/llm-governance-types';
 
 // Use the types in your code
 const user: User = {
@@ -215,7 +215,7 @@ This package is automatically included when you install `@llm-dev-ops/llm-govern
 
 ```typescript
 import { LLMGovernanceSDK } from '@llm-dev-ops/llm-governance-sdk';
-import type { User, Organization } from '@llm-dev-ops/types';
+import type { User, Organization } from '@llm-dev-ops/llm-governance-types';
 
 const sdk = new LLMGovernanceSDK();
 

@@ -6,7 +6,7 @@ import type {
   TeamMember,
   LLMProvider,
   LLMModel,
-} from '@llm-dev-ops/types';
+} from '@llm-dev-ops/llm-governance-types';
 
 export class OrganizationsApi {
   constructor(private client: ApiClient) {}

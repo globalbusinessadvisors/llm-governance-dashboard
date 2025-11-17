@@ -1,4 +1,4 @@
-import type { ApiError, ApiResponse } from '@llm-dev-ops/types';
+import type { ApiError, ApiResponse } from '@llm-dev-ops/llm-governance-types';
 
 export interface ApiClientConfig {
   baseUrl?: string;

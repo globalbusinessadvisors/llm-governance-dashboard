@@ -42,7 +42,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@llm-dev-ops/types": "^1.0.0"
+    "@llm-dev-ops/llm-governance-types": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
