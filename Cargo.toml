@@ -30,7 +30,6 @@ license = "Apache-2.0"
 # Web Framework
 actix-web = "4.9"
 actix-rt = "2.10"
-actix-cors = "0.7"
 
 # Async Runtime
 tokio = { version = "1.40", features = ["full"] }
