@@ -72,5 +72,15 @@ secrets/
 *.pem
 *.crt
 
-# Node modules (if any frontend dev tools are used)
+# Node modules and frontend build artifacts
 node_modules/
+.svelte-kit/
+.next/
+.nuxt/
+out/
+.cache/
+*.tsbuildinfo
+
+# Package manager locks (keep package-lock.json, ignore others)
+pnpm-lock.yaml
+yarn.lock

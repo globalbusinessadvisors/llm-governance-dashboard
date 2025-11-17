@@ -1,0 +1,71 @@
+# Git Attributes for Language Statistics
+# This file tells GitHub how to classify files for language statistics
+
+# Svelte files should be counted as TypeScript, not HTML
+*.svelte linguist-language=TypeScript
+
+# Exclude generated files and dependencies from statistics
+**/node_modules/** linguist-vendored
+**/dist/** linguist-generated
+**/build/** linguist-generated
+**/coverage/** linguist-generated
+**/.svelte-kit/** linguist-generated
+**/target/** linguist-generated
+**/.next/** linguist-generated
+**/.nuxt/** linguist-generated
+
+# Documentation files
+*.md linguist-documentation
+*.mdx linguist-documentation
+
+# Configuration files
+*.json linguist-data
+*.yaml linguist-data
+*.yml linguist-data
+*.toml linguist-data
+*.lock linguist-generated
+package-lock.json linguist-generated
+Cargo.lock linguist-generated
+
+# Mark vendored dependencies
+vendor/** linguist-vendored
+third_party/** linguist-vendored
+
+# TypeScript and JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.mjs linguist-language=JavaScript
+*.cjs linguist-language=JavaScript
+
+# Rust
+*.rs linguist-language=Rust
+
+# HTML (only actual HTML files, not templates)
+*.html linguist-language=HTML
+
+# CSS and styling
+*.css linguist-language=CSS
+*.scss linguist-language=SCSS
+*.sass linguist-language=Sass
+*.less linguist-language=Less
+
+# Shell scripts
+*.sh linguist-language=Shell
+
+# SQL
+*.sql linguist-language=SQL
+
+# Docker
+Dockerfile linguist-language=Dockerfile
+*.dockerfile linguist-language=Dockerfile
+
+# Ignore test files from statistics (optional)
+**/*.test.ts linguist-generated
+**/*.test.js linguist-generated
+**/*.spec.ts linguist-generated
+**/*.spec.js linguist-generated
+
+# Ignore migration files (they're generated/data)
+**/migrations/*.sql linguist-generated
