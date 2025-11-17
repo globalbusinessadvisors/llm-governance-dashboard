@@ -1,5 +1,5 @@
 {
-  "name": "@llm-dev-ops/llm-governance",
+  "name": "@llm-dev-ops/llm-governance-sdk",
   "version": "1.0.0",
   "description": "TypeScript/JavaScript SDK for LLM Governance Dashboard API",
   "main": "dist/index.js",
